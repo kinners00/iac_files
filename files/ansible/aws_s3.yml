@@ -1,0 +1,4 @@
+# Create a simple S3 bucket
+- amazon.aws.s3_bucket:
+    name: mys3bucket
+    state: present
