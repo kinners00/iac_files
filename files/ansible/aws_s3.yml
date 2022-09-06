@@ -1,4 +1,14 @@
-# Create a simple S3 bucket
-- amazon.aws.s3_bucket:
-    name: mys3bucket
-    state: present
+---
+- hosts: localhost
+  tasks:
+  - name: Create S3 bucket
+    s3_bucket:
+      name: myansiblebucket
+      aws_access_key: xxxxxxx
+      aws_secret_key: xxxxxxx
+      state: present
+      region: eu-west-1
+      versioning: no
+      tags:
+         name: myansiblebucket
+         type: example
