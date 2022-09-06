@@ -1,0 +1,17 @@
+- name: Sync Docker Image to Registry
+  # You may pin to the exact commit or the version.
+  # uses: onichandame/docker-registry-sync-action@299248f5fcdacb8229dba17caf36178e85137208
+  uses: onichandame/docker-registry-sync-action@1.0.0
+  with:
+    # the source repository
+    source_repository: 
+    # the username for the source registry
+    source_username: # optional
+    # the password for the source registry
+    source_password: # optional
+    # the target repository
+    target_repository: 
+    # the username for the target registry
+    target_username: # optional
+    # the password for the target registry
+    target_password: # optional
