@@ -16,7 +16,6 @@ provider "aws" {
 
 resource "aws_s3_bucket" "b" {
   bucket = "demo-test"
-  acl    = "public-read"
 
   tags = {
     Name        = "My bucket"
@@ -24,7 +23,15 @@ resource "aws_s3_bucket" "b" {
   }
 }
 
-#resource "aws_s3_bucket_acl" "example" {
-#  bucket = aws_s3_bucket.b.id
-#  acl    = "private"
-#}
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.b.id
+  acl    = "public-read"
+}
+
+resource "aws_s3_bucket_versioning" "versioning_example" {
+  bucket = aws_s3_bucket.b.id
+  versioning_configuration {
+    status = "Enabled"
+    mfa_delete = "Enabled"
+  }
+}
