@@ -49,7 +49,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
 
   rule {
     apply_server_side_encryption_by_default {
-      kms_master_key_id = aws_kms_key.7f39f2ee-61c2-489a-89bf-586a890ee2b9.arn:aws:kms:us-east-1:487527143985:key/7f39f2ee-61c2-489a-89bf-586a890ee2b9
+      kms_master_key_id = aws_kms_key.c2b1bb39-aad3-402f-95a0-db85d4a91f30.arn:aws:kms:us-east-1:487527143985:key/c2b1bb39-aad3-402f-95a0-db85d4a91f30
       sse_algorithm     = "aws:kms"
     }
   }
