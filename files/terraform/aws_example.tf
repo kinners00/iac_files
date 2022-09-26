@@ -10,10 +10,10 @@ terraform {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "demo-test"
+  bucket = "demo-test-mmk-orca"
 
   tags = {
-    Name        = "My bucket"
+    Name        = "demo-bucket"
     Environment = "Dev"
   }
 }
@@ -27,7 +27,7 @@ resource "aws_s3_bucket_versioning" "versioning_example" {
   bucket = aws_s3_bucket.b.id
   versioning_configuration {
     status = "Enabled"
-    mfa_delete = "Enabled"
+    mfa_delete = "Disabled"
   }
 }
   
@@ -36,15 +36,11 @@ resource "aws_s3_bucket_versioning" "versioning_example" {
   deletion_window_in_days = 10
 }
 
-resource "aws_s3_bucket" "mybucket" {
-  bucket = "mybucket"
-}
-
 resource "aws_s3_bucket_server_side_encryption_configuration" "example" {
   bucket = aws_s3_bucket.b.id
 
   rule {
-    apply_server_side_encryption_by_default { = {
+      apply_server_side_encryption_by_default {
         sse_algorithm = "AES256"
     }
   }
