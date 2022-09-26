@@ -34,6 +34,7 @@ resource "aws_s3_bucket_versioning" "versioning_example" {
     status = "Enabled"
     mfa_delete = "Enabled"
   }
+}
   
  resource "aws_kms_key" "mykey" {
   description             = "This key is used to encrypt bucket objects"
