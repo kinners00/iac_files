@@ -16,6 +16,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "b" {
   bucket = "demo-test"
+  acl    = "public-read"
 
   tags = {
     Name        = "My bucket"
