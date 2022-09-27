@@ -3,11 +3,15 @@ terraform {
     aws = {
       source  = "hashicorp/aws"
       version = "~> 4.16"
-      region = "eu-west-1"
+   }
     }
   }
 
   required_version = ">= 1.2.0"
+}
+
+provider "aws" {
+  region = "eu-west-1"
 }
 
 resource "aws_s3_bucket" "b" {
