@@ -27,3 +27,6 @@ jobs:
           path:
             # scanning directories: ./terraform/ ./sub-dir/ and a file: ./Dockerfile
             "./files"
+          format: "sarif"
+          output:
+            "results/"
