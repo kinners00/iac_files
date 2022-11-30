@@ -30,3 +30,4 @@ jobs:
           format: "sarif"
           output:
             "results/"
+          console_output: cli
